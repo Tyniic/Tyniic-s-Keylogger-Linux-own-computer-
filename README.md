@@ -9,7 +9,7 @@ find what event you have with cat /proc/bus/input/devices and look for keyboard.
 
 sudo nano /etc/systemd/system/logger.service
 Here you put : 
-"
+´´´
 [Unit]
 Description=Keyboard Logger
 After=network.target
@@ -24,7 +24,7 @@ WorkingDirectory=/home/user
 
 [Install]
 WantedBy=multi-user.target
-"
+´´´
 sudo systemctl start logger.service
 sudo systemctl enable logger.service
 sudo systemctl status logger.service
