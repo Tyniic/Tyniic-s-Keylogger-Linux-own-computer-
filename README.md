@@ -27,4 +27,39 @@ sudo mkdir -p /var/log/logger_service
 sudo chown user:user /var/log/logger_service
 sudo chmod 755 /var/log/logger_service
 ```
+---
+Nu gör vi systemtjänsten som ska gå i bakgrunden som drar igång scriptet och har igång det även vid omstart
+```
+sudo nano /etc/systemd/system/logger.service
+```
+```
+[Unit]
+Description=Key Logger Service
+After=network.target
+
+[Service]
+User=user
+ExecStart=/usr/bin/python3 /home/user/logger.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+---
+Starta tjänsten så den är igång
+```
+sudo systemctl daemon-reload
+sudo systemctl start logger.service
+sudo systemctl enable logger.service
+```
+Efter det kollar vi status
+```
+sudo systemctl status logger.service
+```
+Dax för att kolla loggen 
+```
+tail -f /var/log/logger_service/my_history.txt
+```
+
+
 
