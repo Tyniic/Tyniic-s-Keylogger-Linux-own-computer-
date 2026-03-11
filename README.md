@@ -29,7 +29,7 @@ sudo chmod 755 /var/log/logger_service
 ```
 För att scriptet ska se vilket keyboard du använder
 ```
-sudo usermod -aG input student
+sudo usermod -aG input NAMN
 ```
 
 ---
