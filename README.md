@@ -27,6 +27,11 @@ sudo mkdir -p /var/log/logger_service
 sudo chown user:user /var/log/logger_service
 sudo chmod 755 /var/log/logger_service
 ```
+För att scriptet ska se vilket keyboard du använder
+```
+sudo usermod -aG input student
+```
+
 ---
 Nu gör vi systemtjänsten som ska gå i bakgrunden som drar igång scriptet och har igång det även vid omstart
 ```
@@ -60,6 +65,7 @@ Dax för att kolla loggen
 ```
 tail -f /var/log/logger_service/my_history.txt
 ```
+Sen öppnar du en ny terminal och ser i realtid dina täcken skrivas ner i loggen
 
 
 
