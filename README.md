@@ -63,7 +63,7 @@ sudo systemctl status logger.service
 ```
 Dax för att kolla loggen 
 ```
-tail -f /var/log/logger_service/my_history.txt
+tail -f /var/log/logger_service/key_history.log
 ```
 Sen öppnar du en ny terminal och ser i realtid dina täcken skrivas ner i loggen
 
